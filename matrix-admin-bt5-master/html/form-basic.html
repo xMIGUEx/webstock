@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="keywords"
+      content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Matrix lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Matrix admin lite design, Matrix admin lite dashboard bootstrap 5 dashboard template"
+    />
+    <meta
+      name="description"
+      content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework"
+    />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Matrix Admin Lite Free Versions Template by WrapPixel</title>
+    <!-- Favicon icon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/images/favicon.png"
+    />
+    <!-- Custom CSS -->
+    <link href="../assets/libs/flot/css/float-chart.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="../dist/css/style.min.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+      <div class="lds-ripple">
+        <div class="lds-pos"></div>
+        <div class="lds-pos"></div>
+      </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div
+      id="main-wrapper"
+      data-layout="vertical"
+      data-navbarbg="skin5"
+      data-sidebartype="full"
+      data-sidebar-position="absolute"
+      data-header-position="absolute"
+      data-boxed-layout="full"
+    >
+      <!-- ============================================================== -->
+      <!-- Topbar header - style you can find in pages.scss -->
+      <!-- ============================================================== -->
+      <header class="topbar" data-navbarbg="skin5">
+        <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+          <div class="navbar-header" data-logobg="skin5">
+            <!-- ============================================================== -->
+            <!-- Logo -->
+            <!-- ============================================================== -->
+            <a class="navbar-brand" href="index.html">
+              <!-- Logo icon -->
+              <b class="logo-icon ps-2">
+                <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                <!-- Dark Logo icon -->
+                <img
+                  src="../assets/images/logo-icon.png"
+                  alt="homepage"
+                  class="light-logo"
+                  width="50"
+                />
+              </b>
+              <!--End Logo icon -->
+              <!-- Logo text -->
+              <span class="logo-text ms-2">
+                <!-- dark Logo text -->
+                <img
+                  src="../assets/images/logo-text.png"
+                  alt="homepage"
+                  class="light-logo"
+                />
+              </span>
+              <!-- Logo icon -->
+              <!-- <b class="logo-icon"> -->
+              <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+              <!-- Dark Logo icon -->
+              <!-- <img src="../assets/images/logo-text.png" alt="homepage" class="light-logo" /> -->
+
+              <!-- </b> -->
+              <!--End Logo icon -->
+            </a>
+            <!-- ============================================================== -->
+            <!-- End Logo -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Toggle which is visible on mobile only -->
+            <!-- ============================================================== -->
+            <a
+              class="nav-toggler waves-effect waves-light d-block d-md-none"
+              href="javascript:void(0)"
+              ><i class="ti-menu ti-close"></i
+            ></a>
+          </div>
+          <!-- ============================================================== -->
+          <!-- End Logo -->
+          <!-- ============================================================== -->
+          <div
+            class="navbar-collapse collapse"
+            id="navbarSupportedContent"
+            data-navbarbg="skin5"
+          >
+            <!-- ============================================================== -->
+            <!-- toggle and nav items -->
+            <!-- ============================================================== -->
+            <ul class="navbar-nav float-start me-auto">
+              <li class="nav-item d-none d-lg-block">
+                <a
+                  class="nav-link sidebartoggler waves-effect waves-light"
+                  href="javascript:void(0)"
+                  data-sidebartype="mini-sidebar"
+                  ><i class="mdi mdi-menu font-24"></i
+                ></a>
+              </li>
+
+
+            </ul>
+            <!-- ============================================================== -->
+            <!-- Right side toggle and nav items -->
+            <!-- ============================================================== -->
+            <ul class="navbar-nav float-end">
+              
+              <!-- ============================================================== -->
+              <!-- End Messages -->
+              <!-- ============================================================== -->
+
+              <!-- ============================================================== -->
+              <!-- User profile and search -->
+              <!-- ============================================================== -->
+              <li class="nav-item dropdown">
+                <a
+                  class="
+                    nav-link
+                    dropdown-toggle
+                    text-muted
+                    waves-effect waves-dark
+                    pro-pic
+                  "
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="../assets/images/users/1.jpg"
+                    alt="user"
+                    class="rounded-circle"
+                    width="31"
+                  />
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-end user-dd animated"
+                  aria-labelledby="navbarDropdown"
+                >
+                  
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="authentication-login.html"
+                    ><i class="fa fa-power-off me-1 ms-1"></i> Logout</a
+                  >
+                  <div class="dropdown-divider"></div>
+                  <div class="ps-4 p-10">
+                    
+                  </div>
+                </ul>
+              </li>
+              <!-- ============================================================== -->
+              <!-- User profile and search -->
+              <!-- ============================================================== -->
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!-- ============================================================== -->
+      <!-- End Topbar header -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Left Sidebar - style you can find in sidebar.scss  -->
+      <!-- ============================================================== -->
+      <aside class="left-sidebar" data-sidebarbg="skin5">
+        <!-- Sidebar scroll-->
+        <div class="scroll-sidebar">
+          <!-- Sidebar navigation-->
+          <nav class="sidebar-nav">
+            <ul id="sidebarnav" class="pt-4">
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link waves-effect waves-dark sidebar-link"
+                  href="index.html"
+                  aria-expanded="false"
+                  ><i class="mdi mdi-view-dashboard"></i
+                  ><span class="hide-menu">Inicio</span></a
+                >
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link waves-effect waves-dark sidebar-link"
+                  href="tables.html"
+                  aria-expanded="false"
+                  ><i class="mdi mdi-border-inside"></i
+                  ><span class="hide-menu">Consultas</span></a
+                >
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link has-arrow waves-effect waves-dark"
+                  href="javascript:void(0)"
+                  aria-expanded="false"
+                  ><i class="mdi mdi-receipt"></i
+                  ><span class="hide-menu">Formularios </span></a
+                >
+                <ul aria-expanded="false" class="collapse first-level">
+                  <li class="sidebar-item">
+                    <a href="form-basic.html" class="sidebar-link"
+                      ><i class="mdi mdi-note-outline"></i
+                      ><span class="hide-menu"> Formulario </span></a
+                    >
+                  </li>
+
+                </ul>
+              </li>         
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link has-arrow waves-effect waves-dark"
+                  href="javascript:void(0)"
+                  aria-expanded="false"
+                  ><i class="mdi mdi-account-key"></i
+                  ><span class="hide-menu">Authentication </span></a
+                >
+                <ul aria-expanded="false" class="collapse first-level">
+                  <li class="sidebar-item">
+                    <a href="authentication-login.html" class="sidebar-link"
+                      ><i class="mdi mdi-all-inclusive"></i
+                      ><span class="hide-menu"> Login </span></a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+      </aside>
+      <!-- ============================================================== -->
+      <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Page wrapper  -->
+      <!-- ============================================================== -->
+      <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <div class="card">
+          <form class="form-horizontal">
+              <div class="card-body">
+                  <h4 class="card-title">Registro Proveedor</h4>
+                  <div class="form-group row">
+                      <label for="companyName" class="col-sm-3 text-end control-label col-form-label">Nombre de la empresa o proveedor</label>
+                      <div class="col-sm-9">
+                          <input type="text" class="form-control" id="companyName" placeholder="Nombre de la empresa o proveedor" />
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="address" class="col-sm-3 text-end control-label col-form-label">Dirección</label>
+                      <div class="col-sm-9">
+                          <input type="text" class="form-control" id="address" placeholder="Dirección" />
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="phoneNumber" class="col-sm-3 text-end control-label col-form-label">Número de teléfono</label>
+                      <div class="col-sm-9">
+                          <input type="text" class="form-control" id="phoneNumber" placeholder="Número de teléfono" />
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="email" class="col-sm-3 text-end control-label col-form-label">Correo electrónico</label>
+                      <div class="col-sm-9">
+                          <input type="email" class="form-control" id="email" placeholder="Correo electrónico" />
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="website" class="col-sm-3 text-end control-label col-form-label">Sitio web (si dispone)</label>
+                      <div class="col-sm-9">
+                          <input type="text" class="form-control" id="website" placeholder="Sitio web" />
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="productCategory" class="col-sm-3 text-end control-label col-form-label">Tipo o categoría de producto</label>
+                      <div class="col-sm-9">
+                          <select class="form-select">
+                              <option value="electronicos">Electrónicos</option>
+                              <option value="ropa">Ropa</option>
+                              <option value="hogar">Hogar</option>
+                              <option value="alimentos">Alimentos</option>
+                              <!-- Agrega más opciones según tus necesidades -->
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="comments" class="col-sm-3 text-end control-label col-form-label">Comentarios o descripción</label>
+                      <div class="col-sm-9">
+                          <textarea class="form-control"></textarea>
+                      </div>
+                  </div>
+              </div>
+              <div class="border-top">
+                  <div class="card-body">
+                      <button type="button" class="btn btn-primary">Submit</button>
+                  </div>
+              </div>
+          </form>
+      </div>
+     
+                      <!-- Sección de Registro Productos -->
+
+                      <div class="card mt-3">
+                        <form class="form-horizontal">
+                            <div class="card-body">
+                                <h5 class="card-title">Registro Productos</h5>
+                                <div class="form-group row">
+                                    <label for="productName" class="col-sm-3 text-end control-label col-form-label">Nombre del producto</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="productName" placeholder="Nombre del producto" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="productCode" class="col-sm-3 text-end control-label col-form-label">Código de producto</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="productCode" placeholder="Código de producto" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="productDescription" class="col-sm-3 text-end control-label col-form-label">Descripción de producto</label>
+                                    <div class="col-sm-9">
+                                        <textarea class="form-control" id="productDescription"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="productCategory" class="col-sm-3 text-end control-label col-form-label">Categoría o tipo de producto</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-select" id="productCategory">
+                                            <option value="electronicos">Electrónicos</option>
+                                            <option value="ropa">Ropa</option>
+                                            <option value="hogar">Hogar</option>
+                                            <option value="alimentos">Alimentos</option>
+                                            <!-- Agrega más opciones según tus necesidades -->
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="unitPrice" class="col-sm-3 text-end control-label col-form-label">Precio Unitario</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="unitPrice" placeholder="Precio Unitario" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="stockQuantity" class="col-sm-3 text-end control-label col-form-label">Cantidad de Stock</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="stockQuantity" placeholder="Cantidad de Stock" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inventoryDate" class="col-sm-3 text-end control-label col-form-label">Fecha de ingreso de inventario</label>
+                                    <div class="col-sm-9">
+                                        <input type="date" class="form-control" id="inventoryDate" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="serialNumber" class="col-sm-3 text-end control-label col-form-label">Número de serie si aplica</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="serialNumber" placeholder="Número de serie" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="expiryDate" class="col-sm-3 text-end control-label col-form-label">Fecha de vencimiento</label>
+                                    <div class="col-sm-9">
+                                        <input type="date" class="form-control" id="expiryDate" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-top">
+                                <div class="card-body">
+                                    <button type="button" class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+              
+
+          <!-- ============================================================== -->
+          <!-- End PAge Content -->
+          <!-- ============================================================== -->
+          <!-- ============================================================== -->
+          <!-- Right sidebar -->
+          <!-- ============================================================== -->
+          <!-- .right-sidebar -->
+          <!-- ============================================================== -->
+          <!-- End Right sidebar -->
+          <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <footer class="footer text-center">
+          Todos los derechos reservados para la Universidad libre de colombia
+          <a href="https://www.unilibre.edu.co/bogota/">U.libre</a>.
+        </footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+      </div>
+      <!-- ============================================================== -->
+      <!-- End Page wrapper  -->
+      <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="../dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="../dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="../dist/js/custom.min.js"></script>
+    <!-- This Page JS -->
+    <script src="../assets/libs/inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+    <script src="../dist/js/pages/mask/mask.init.js"></script>
+    <script src="../assets/libs/select2/dist/js/select2.full.min.js"></script>
+    <script src="../assets/libs/select2/dist/js/select2.min.js"></script>
+    <script src="../assets/libs/jquery-asColor/dist/jquery-asColor.min.js"></script>
+    <script src="../assets/libs/jquery-asGradient/dist/jquery-asGradient.js"></script>
+    <script src="../assets/libs/jquery-asColorPicker/dist/jquery-asColorPicker.min.js"></script>
+    <script src="../assets/libs/jquery-minicolors/jquery.minicolors.min.js"></script>
+    <script src="../assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="../assets/libs/quill/dist/quill.min.js"></script>
+    <script>
+      //***********************************//
+      // For select 2
+      //***********************************//
+      $(".select2").select2();
+
+      /*colorpicker*/
+      $(".demo").each(function () {
+        //
+        // Dear reader, it's actually very easy to initialize MiniColors. For example:
+        //
+        //  $(selector).minicolors();
+        //
+        // The way I've done it below is just for the demo, so don't get confused
+        // by it. Also, data- attributes aren't supported at this time...they're
+        // only used for this demo.
+        //
+        $(this).minicolors({
+          control: $(this).attr("data-control") || "hue",
+          position: $(this).attr("data-position") || "bottom left",
+
+          change: function (value, opacity) {
+            if (!value) return;
+            if (opacity) value += ", " + opacity;
+            if (typeof console === "object") {
+              console.log(value);
+            }
+          },
+          theme: "bootstrap",
+        });
+      });
+      /*datwpicker*/
+      jQuery(".mydatepicker").datepicker();
+      jQuery("#datepicker-autoclose").datepicker({
+        autoclose: true,
+        todayHighlight: true,
+      });
+      var quill = new Quill("#editor", {
+        theme: "snow",
+      });
+    </script>
+  </body>
+</html>

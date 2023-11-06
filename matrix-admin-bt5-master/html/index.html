@@ -328,100 +328,73 @@
               <!-- Card -->
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Chat</h4>
-                  <div class="chat-box scrollable" style="height: 475px">
-                    <!--chat Row -->
-                    <ul class="chat-list">
-                      <!--chat Row -->
-                      <li class="chat-item">
-                        <div class="chat-img">
-                          <img src="../assets/images/users/agent.jpg" alt="user" />
-                        </div>
-                        <div class="chat-content">
-                          <h6 class="font-medium">Auxiliar</h6>
-                          <div class="box bg-light-info">
-                            Jefe el producto MA134-Motor se encuentra en fallando.
-                          </div>
-                        </div>
-                        <div class="chat-time">10:56 am</div>
-                      </li>
-                      <!--chat Row -->
-                      <li class="chat-item">
-                        <div class="chat-img">
-                          <img src="../assets/images/users/2.jpg" alt="user" />
-                        </div>
-                        <div class="chat-content">
-                          <h6 class="font-medium">Administrador</h6>
-                          <div class="box bg-light-info">
-                            Andres, ya valido que fue lo que sucedio
-                          </div>
-                        </div>
-                        <div class="chat-time">10:57 am</div>
-                      </li>
-                      <!--chat Row -->
-                      <li class="chat-item">
-                        <div class="chat-img">
-                          <img src="../assets/images/users/agent.jpg " alt="user" />
-                        </div>
-                        <div class="chat-content">
-                            <h6 class="font-medium">Auxiliar</h6>
-                          <div class="box bg-light-info">
-                            Jefe el proveedor indica que...
-                          </div>
-                          <br />
-                        </div>
-                      </li>
-                      <!--chat Row -->
-                      <li class="chat-item">
-                        <div class="chat-img">
-                          <img src="../assets/images/users/agent.jpg" alt="user" />
-                        </div>
-                        <div class="chat-content">
-                          <div class="box bg-light-info">
-                            Efectivamente se envio el producto averiado.
-                          </div>
-                          <br />
-                        </div>
-                        <div class="chat-time">10:59 am</div>
-                      </li>
-                      <!--chat Row -->
-                      <li class="chat-item">
-                        <div class="chat-img">
-                          <img src="../assets/images/users/2.jpg" alt="user" />
-                        </div>
-                        <div class="chat-content">
-                          <h6 class="font-medium">Administrador</h6>
-                          <div class="box bg-light-info">
-                            Gracias Andres, ya hablo con ellos para ver que solucion le damos.
-                          </div>
-                        </div>
-                        <div class="chat-time">11:00 am</div>
-                      </li>
-                      <!--chat Row -->
-                    </ul>
-                  </div>
+                    <h4 class="card-title">Chat</h4>
+                    <div class="chat-box scrollable" style="height: 475px">
+                        <ul class="chat-list" id="chatList">
+                            <!-- Aquí se añadirán los mensajes -->
+                        </ul>
+                    </div>
                 </div>
                 <div class="card-body border-top">
-                  <div class="row">
-                    <div class="col-9">
-                      <div class="input-field mt-0 mb-0">
-                        <textarea
-                          id="textarea1"
-                          placeholder="Type and enter"
-                          class="form-control border-0"
-                        ></textarea>
-                      </div>
+                    <div class="row">
+                        <div class="col-9">
+                            <div class="input-field mt-0 mb-0">
+                                <input type="text" id="messageInput" placeholder="Type and enter" class="form-control border-0">
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <label for="imageInput" class="btn-circle btn-lg btn-info text-white">
+                                <i class="mdi mdi-image fs-3"></i>
+                            </label>
+                            <input type="file" id="imageInput" style="display: none;" accept="image/*">
+                        </div>
+                        <div class="col-1">
+                            <a class="btn-circle btn-lg btn-cyan float-end text-white" href="javascript:void(0)" onclick="sendMessage()">
+                                <i class="mdi mdi-send fs-3"></i>
+                            </a>
+                        </div>
                     </div>
-                    <div class="col-3">
-                      <a
-                        class="btn-circle btn-lg btn-cyan float-end text-white"
-                        href="javascript:void(0)"
-                        ><i class="mdi mdi-send fs-3"></i
-                      ></a>
-                    </div>
-                  </div>
                 </div>
-              </div>
+            </div>
+            
+            <script>
+                function sendMessage() {
+                    const message = document.getElementById('messageInput').value;
+                    const image = document.getElementById('imageInput').files[0];
+            
+                    if (message.trim() !== '' || image) {
+                        const chatList = document.getElementById('chatList');
+                        let newMessage = `
+                            <li class="chat-item">
+                                <div class="chat-img">
+                                    <img src="../assets/images/users/agent.jpg" alt="user" />
+                                </div>
+                                <div class="chat-content">
+                                    <h6 class="font-medium">User</h6>
+                                    <div class="box bg-light-info">
+                                        ${message}
+                                    </div>
+                                </div>
+                            </li>
+                        `;
+            
+                        if (image) {
+                            const imageURL = URL.createObjectURL(image);
+                            newMessage = `
+                                <li class="chat-item">
+                                    <div class="chat-img">
+                                        <img src="${imageURL}" alt="user" />
+                                    </div>
+                                </li>
+                            `;
+                        }
+            
+                        chatList.insertAdjacentHTML('beforeend', newMessage);
+                        document.getElementById('messageInput').value = ''; // Limpia el campo después de enviar el mensaje
+                    }
+                }
+            </script>
+            
               <!-- card -->
               <div class="card">
                 <div class="card-body">

@@ -32,9 +32,25 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script>
+      //Esta función se ejecuta cuando la página se carga
+      function verificarAcceso() {
+        //Obtener el rol del usuario de la cookie o del localStorage
+        var rol = document.cookie.split("=")[1];
+        //var rol = localStorage.getItem("rol");
+        //Comprobar si el rol es administrador, auxiliar o consulta
+        //En este caso, solo el administrador puede acceder a la página de form-basic, así que hacemos lo siguiente:
+        //Si el rol no es administrador, redirigir al usuario a una página de error
+        //Este es el código que he modificado para restringir el acceso
+        if (rol == "consulta") {
+          //Redirigir al usuario a una página de error
+          window.location.href = "error-500.html";
+        }
+      }
+      </script>
   </head>
 
-  <body>
+  <body onload="verificarAcceso()">
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->

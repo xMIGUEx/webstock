@@ -3,7 +3,6 @@ const TYPES = require('tedious').TYPES;
 
 const addProveedor = (proveedorData) => {
     const {
-        IDProveedor,
         NombreProveedor,
         DireccionProveedor,
         NoTelefono,
@@ -12,20 +11,20 @@ const addProveedor = (proveedorData) => {
         DescripcionProveedor,
     } = proveedorData;
     const query = `
-    INSERT INTO [dbo].[Proveedores] (IDProveedor, NombreProveedor, DireccionProveedor, NoTelefono, Correo, Web, DescripcionProveedor)
-    VALUES (@IDproveedor, @nombreproveedor,	@direccionproveedor, @notelefono, @correo, @web, @descripcionproveedor)
+    INSERT INTO [dbo].[Proveedores] (NombreProveedor, DireccionProveedor, NoTelefono, Correo, Web, DescripcionProveedor)
+    VALUES (@nombreproveedor, @direccionproveedor, @notelefono, @correo, @web, @descripcionproveedor)
     `;
     const parameters = [
-        {name: 'IDProveedor', type: TYPES.Int, value: IDProveedor},
         {name: 'NombreProveedor', type: TYPES.VarChar, value: NombreProveedor},
         {name: 'DireccionProveedor', type: TYPES.VarChar, value: DireccionProveedor},
         {name: 'NoTelefono', type: TYPES.VarChar, value: NoTelefono},
-        {name: 'Correo', type: TYPES.Int, VarChar: Correo},
-        {name: 'Web', type: TYPES.Int, VarChar: Web},
+        {name: 'Correo', type: TYPES.VarChar, value: Correo},
+        {name: 'Web', type: TYPES.VarChar, value: Web},
         {name: 'DescripcionProveedor', type: TYPES.VarChar, value: DescripcionProveedor},
     ];
     return execQuery.execWriteCommand(query, parameters)
 };
+
 
 const updateProveedor = (proveedorData) => {
     const {

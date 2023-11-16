@@ -1,4 +1,4 @@
-const proveedores = require('express').Router();
+const proveedoresRoute = require('express').Router();
 const {v4: uuidv4} = require('uuid');
 const proveedoresModel = require('../models/proveedores.model');
 
@@ -23,9 +23,9 @@ proveedoresRoute.get('/:id', async (req, res) => {
             res.status(404).json ({ error: 'No se encuentra el proveedor'});
         }
     })
-})
-.catch(error => {
-    res.status(500).json({error});
+    .catch(error => {
+        res.status(500).json({error});
+});
 });
 
 proveedoresRoute.post('/', async (req, res) => {

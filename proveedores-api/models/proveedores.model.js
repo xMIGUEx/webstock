@@ -1,4 +1,4 @@
-const execQuery = require('../helpers/execQuery');
+const execQuery = require('./../helpers/execQuery');
 const TYPES = require('tedious').TYPES;
 
 const addProveedor = (proveedorData) => {

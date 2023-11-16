@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
-const todosController = require('./controllers/todos.controller');
+const proveedoresController = require('./controllers/proveedores.controller');
 
 dotenv.config();
 
@@ -21,7 +21,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/api/todos', todosController);
+app.use('/api/proveedores', proveedoresController);
 
 app.listen(API_PORT, () => {
     console.log(`API running on PORT ${API_PORT}`);

@@ -1,4 +1,4 @@
-const execQuery = require('./../helpers/execQuery');
+const execQuery = require('../helpers/execQuery');
 const TYPES = require('tedious').TYPES;
 
 const addProveedor = (proveedorData) => {
@@ -70,4 +70,23 @@ const allProveedor = () => {
     SELECT * FROM [dbo].[Proveedores]
     `;
     return execQuery.execReadCommand(query);
+};
+
+const getByIDProveedor = (IDProverdor) => {
+    const query = `
+    SELECT * FROM [dbo].[Proveedores]
+    WHERE IDProveedor = @IDproveedor
+    `;
+    const parameters = [
+        {name: 'IDProveedor', type: TYPES.Int, value: IDProveedor}
+    ];
+    return execQuery.execReadCommand(query, parameters);
+}
+
+module.exports = {
+    addProveedor,
+    updateProveedor,
+    deleteProveedor,
+    allProveedor,
+    getByIDProveedor,
 }

@@ -1,0 +1,15 @@
+{
+  "name": "webstock",
+  "version": "1.0.0",
+  "description": "Proyecto final de Ingenieria de Software 1 de la Universidad Livre de Colombia\r Estudiantes: [MIGUEL ADOLFO CANCINO CASTIBLANCO] [PAOLA CONTRERAS][PAULA CASALLAS][MARIA FERNANDA][ANGIE LORENA] # webstock",
+  "workspaces": [
+    "todo-api"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

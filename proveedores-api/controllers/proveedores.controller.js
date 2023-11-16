@@ -29,7 +29,6 @@ proveedoresRoute.get('/:id', async (req, res) => {
 });
 
 proveedoresRoute.post('/', async (req, res) => {
-    const IDProveedor = uuidv4 ();
     const {
         nombreproveedor,
         direccionproveedor,
@@ -39,7 +38,6 @@ proveedoresRoute.post('/', async (req, res) => {
         descripcionproveedor,
     } = req.body;
         proveedoresModel.addProveedor({
-        IDProveedor,
         nombreproveedor,
         direccionproveedor,
         notelefono,
@@ -52,7 +50,6 @@ proveedoresRoute.post('/', async (req, res) => {
             data: {
                 rowCount,
                 more,
-                IDProveedor,
             },
         });
     })
@@ -60,6 +57,7 @@ proveedoresRoute.post('/', async (req, res) => {
         res.status(500).json({error})
     });
 });
+
 
 proveedoresRoute.put('/:id', async (req, res) => {
     const {id: IDProveedor} = req.params;

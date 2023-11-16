@@ -3,6 +3,7 @@ const TYPES = require('tedious').TYPES;
 
 const addProveedor = (proveedorData) => {
     const {
+        IDProveedor,
         NombreProveedor,
         DireccionProveedor,
         NoTelefono,
@@ -11,10 +12,11 @@ const addProveedor = (proveedorData) => {
         DescripcionProveedor,
     } = proveedorData;
     const query = `
-    INSERT INTO [dbo].[Proveedores] (NombreProveedor, DireccionProveedor, NoTelefono, Correo, Web, DescripcionProveedor)
-    VALUES (@nombreproveedor, @direccionproveedor, @notelefono, @correo, @web, @descripcionproveedor)
+    INSERT INTO [dbo].[Proveedores] (IDProveedor, NombreProveedor, DireccionProveedor, NoTelefono, Correo, Web, DescripcionProveedor)
+    VALUES (@IDProveedor, @nombreproveedor, @direccionproveedor, @notelefono, @correo, @web, @descripcionproveedor)
     `;
     const parameters = [
+        {name: 'IDProveedor', type: TYPES.Int, value: IDProveedor},
         {name: 'NombreProveedor', type: TYPES.VarChar, value: NombreProveedor},
         {name: 'DireccionProveedor', type: TYPES.VarChar, value: DireccionProveedor},
         {name: 'NoTelefono', type: TYPES.VarChar, value: NoTelefono},
@@ -71,7 +73,7 @@ const allProveedor = () => {
     return execQuery.execReadCommand(query);
 };
 
-const getByIDProveedor = (IDProverdor) => {
+const getByIDProveedor = (IDProveedor) => {
     const query = `
     SELECT * FROM [dbo].[Proveedores]
     WHERE IDProveedor = @IDproveedor

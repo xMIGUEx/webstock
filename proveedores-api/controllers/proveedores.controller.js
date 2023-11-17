@@ -1,5 +1,4 @@
 const proveedoresRoute = require('express').Router();
-const {v4: uuidv4} = require('uuid');
 const proveedoresModel = require('../models/proveedores.model');
 
 proveedoresRoute.get('/', async(req, res) => {
@@ -30,53 +29,22 @@ proveedoresRoute.get('/:id', async (req, res) => {
 
 proveedoresRoute.post('/', async (req, res) => {
     const {
-        nombreproveedor,
-        direccionproveedor,
-        notelefono,
-        correo,
-        web,
-        descripcionproveedor,
-    } = req.body;
-        proveedoresModel.addProveedor({
-        nombreproveedor,
-        direccionproveedor,
-        notelefono,
-        correo,
-        web,
-        descripcionproveedor,
-    })
-    .then((rowCount, more) => {
-        res.status(200).json({
-            data: {
-                rowCount,
-                more,
-            },
-        });
-    })
-    .catch(error => {
-        res.status(500).json({error})
-    });
-});
-
-
-proveedoresRoute.put('/:id', async (req, res) => {
-    const {id: IDProveedor} = req.params;
-    const {
-        nombreproveedor,
-        direccionproveedor,
-        notelefono,
-        correo,
-        web,
-        descripcionproveedor,
-    } = req.body;
-        proveedoresModel.updateProveedor({
         IDProveedor,
-        nombreproveedor,
-        direccionproveedor,
-        notelefono,
-        correo,
-        web,
-        descripcionproveedor,
+        NombreProveedor,
+        DireccionProveedor,
+        NoTelefono,
+        Correo,
+        Web,
+        DescripcionProveedor,
+    } = req.body;
+    proveedoresModel.addProveedor({
+        IDProveedor,
+        NombreProveedor,
+        DireccionProveedor,
+        NoTelefono,
+        Correo,
+        Web,
+        DescripcionProveedor,
     })
     .then((rowCount, more) => {
         res.status(200).json({
@@ -92,9 +60,44 @@ proveedoresRoute.put('/:id', async (req, res) => {
     });
 });
 
-proveedoresRoute.delete('/:id', async (req, res) => {
-    const {id: IDProveedor} = req.params;
-    proveedoresModel.deleteTodo(IDProveedor)
+
+proveedoresRoute.put('/', async (req, res) => {
+    const {
+        IDProveedor,
+        NombreProveedor,
+        DireccionProveedor,
+        NoTelefono,
+        Correo,
+        Web,
+        DescripcionProveedor,
+    } = req.body;
+    proveedoresModel.updateProveedor({
+        IDProveedor,
+        NombreProveedor,
+        DireccionProveedor,
+        NoTelefono,
+        Correo,
+        Web,
+        DescripcionProveedor,
+    })
+    .then((rowCount, more) => {
+        res.status(200).json({
+            data: {
+                rowCount,
+                more,
+                IDProveedor,
+            },
+        });
+    })
+    .catch(error => {
+        res.status(500).json({error})
+    });
+});
+
+
+proveedoresRoute.delete('/', async (req, res) => {
+    const { IDProveedor } = req.body;
+    proveedoresModel.deleteProveedor(IDProveedor)
     .then((rowCount, more) => {
         res.status(200).json({ rowCount, more });
     })

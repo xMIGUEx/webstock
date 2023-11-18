@@ -6,7 +6,7 @@ const proveedoresController = require('./controllers/proveedores.controller');
 dotenv.config();
 
 const {
-    API_PORT = 9000,
+    API_PORT = 4280,
     SERVER_TAG = 'API EXPRESS'
 } = process.env;
 
@@ -20,10 +20,7 @@ app.use((req, res, next) => {
     console.log(`Request client URL: ${req.get('host')}${req.originalUrl} >>>> ${SERVER_TAG}`);
     next();
 });
-app.use((req, res, next) => {
-    req.url = req.url.replace(/%0A/g, '');
-    next();
-});
+
 app.use('/api/proveedores', proveedoresController);
 
 app.listen(API_PORT, () => {

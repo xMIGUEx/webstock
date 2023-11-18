@@ -29,8 +29,8 @@
       }
     },
     "entities": {
-      "Person": {
-        "source": "dbo.MyTestPersonTable",
+      "Proveedores": {
+        "source": "dbo.Proveedores",
         "permissions": [
           {
             "actions": ["create", "read", "update", "delete"],
@@ -38,6 +38,13 @@
           }
         ]
       }
-    }
+    },
+    "routes": [
+      {
+        "route": "/api/*",
+        "methods": ["GET", "POST", "PUT", "DELETE"],
+        "allowedRoles": ["anonymous"]
+      }
+    ]
   }
   

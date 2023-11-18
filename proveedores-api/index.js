@@ -6,7 +6,6 @@ const proveedoresController = require('./controllers/proveedores.controller');
 dotenv.config();
 
 const {
-    API_PORT = 9000,
     SERVER_TAG = 'API EXPRESS'
 } = process.env;
 
@@ -23,6 +22,4 @@ app.use((req, res, next) => {
 
 app.use('/api/proveedores', proveedoresController);
 
-app.listen(API_PORT, () => {
-    console.log(`API running on PORT ${API_PORT}`);
-});
+module.exports = app;

@@ -299,119 +299,172 @@
           <!-- ============================================================== -->
           <div class="row">
             <div class="col-12">
-              <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Proveedores</h5>
-                    <div class="table-responsive">
-                      <table id="proveedores_table" class="table table-striped table-bordered">
-                        <!-- Encabezados de Proveedores -->
-                        <thead>
-                          <tr>
-                            <th>IDProveedor</th>
-                            <th>NombreProveedor</th>
-                            <th>DireccionProveedor</th>
-                            <th>NoTelefono</th>
-                            <th>Correo</th>
-                            <th>Web</th>
-                            <th>DescripcionProveedor</th>
-                          </tr>
-                        </thead>
-                        <tbody id="proveedores_body">
-                          <!-- Aquí se colocará la información de los proveedores -->
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Productos</h5>
-                    <div class="table-responsive">
-                      <table id="productos_table" class="table table-striped table-bordered">
-                        <!-- Encabezados de Productos -->
-                        <thead>
-                          <tr>
-                            <th>Código</th>
-                            <th>Nombre</th>
-                            <th>Descripción</th>
-                            <th>Categoría</th>
-                            <th>Precio</th>
-                            <th>Stock</th>
-                            <th>IDProveedor</th>
-                          </tr>
-                        </thead>
-                        <tbody  id="productos_body">
-                          <!-- Aquí se colocará la información de los productos -->
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-                
-              
-                <!-- Script para obtener datos de la API -->
-                <script>
-                  // Obtener datos de la API de productos
-                  fetch('https://backend-ing.onrender.com/api/Productos')
-                    .then(response => response.json())
-                    .then(data => {
-                      const productosTableBody = document.getElementById('productos_body');
-                      if (data && data.data && Array.isArray(data.data)) {
-                        data.data.forEach(producto => {
-                          const row = document.createElement('tr');
-                          row.innerHTML = `
-                            <td>${producto.CodProducto}</td>
-                            <td>${producto.NombreProducto}</td>
-                            <td>${producto.DescripcionProducto}</td>
-                            <td>${producto.CategoriaProducto}</td>
-                            <td>${producto.PrecioUnidad}</td>
-                            <td>${producto.CantidadStock}</td>
-                            <td>${producto.IDProveedor}</td>
-                          `;
-                          productosTableBody.appendChild(row);
-                        });
-                      } else {
-                        const row = document.createElement('tr');
-                        row.innerHTML = '<td colspan="7">No se pudieron obtener los productos</td>';
-                        productosTableBody.appendChild(row);
-                      }
-                    })
-                    .catch(error => console.error('Error al obtener productos:', error));
-                  
-                  // Obtener datos de la API de proveedores
-                  fetch('https://backend-ing.onrender.com/api/Proveedores')
-                    .then(response => response.json())
-                    .then(data => {
-                      const proveedoresTableBody = document.getElementById('proveedores_body');
-                      if (data && data.data && Array.isArray(data.data)) {
-                        data.data.forEach(proveedor => {
-                          const row = document.createElement('tr');
-                          row.innerHTML = `
-                            <td>${proveedor.IDProveedor}</td>
-                            <td>${proveedor.NombreProveedor}</td>
-                            <td>${proveedor.DireccionProveedor}</td>
-                            <td>${proveedor.NoTelefono}</td>
-                            <td>${proveedor.Correo}</td>
-                            <td>${proveedor.Web}</td>
-                            <td>${proveedor.DescripcionProveedor}</td>
-                          `;
-                          proveedoresTableBody.appendChild(row);
-                        });
-                      } else {
-                        const row = document.createElement('tr');
-                        row.innerHTML = '<td colspan="7">No se pudieron obtener los proveedores</td>';
-                        proveedoresTableBody.appendChild(row);
-                      }
-                    })
-                    .catch(error => console.error('Error al obtener proveedores:', error));
-                </script>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+              <!-- Campo de búsqueda para productos -->
+
+  <input type="text" id="searchProveedores" placeholder="Buscar proveedores...">
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title mb-0">Proveedores</h5>
     </div>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>IDProveedor</th>
+            <th>NombreProveedor</th>
+            <th>DireccionProveedor</th>
+            <th>NoTelefono</th>
+            <th>Correo</th>
+            <th>Web</th>
+            <th>DescripcionProveedor</th>
+          </tr>
+        </thead>
+        <tbody id="proveedores_body">
+          <!-- Aquí se colocará la información de los proveedores -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Campo de búsqueda para proveedores -->
+  <input type="text" id="searchProductos" placeholder="Buscar productos...">
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title mb-0">Productos</h5>
+    </div>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Categoría</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>IDProveedor</th>
+          </tr>
+        </thead>
+        <tbody id="productos_body">
+          <!-- Aquí se colocará la información de los productos -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    // Obtener datos de la API de productos
+    fetch('https://backend-ing.onrender.com/api/Productos')
+      .then(response => response.json())
+      .then(data => {
+        const productosTableBody = document.getElementById('productos_body');
+        if (data && data.data && Array.isArray(data.data)) {
+          const originalData = data.data.slice(); // Guardar datos originales para búsqueda
+
+          data.data.forEach(producto => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+              <td>${producto.CodProducto}</td>
+              <td>${producto.NombreProducto}</td>
+              <td>${producto.DescripcionProducto}</td>
+              <td>${producto.CategoriaProducto}</td>
+              <td>${producto.PrecioUnidad}</td>
+              <td>${producto.CantidadStock}</td>
+              <td>${producto.IDProveedor}</td>
+            `;
+            productosTableBody.appendChild(row);
+          });
+
+          // Búsqueda en tiempo real para productos
+          const searchProductos = document.getElementById('searchProductos');
+          searchProductos.addEventListener('keyup', function() {
+            const searchText = this.value.toLowerCase();
+            const filteredData = originalData.filter(producto =>
+              Object.values(producto).some(value =>
+                String(value).toLowerCase().includes(searchText)
+              )
+            );
+
+            productosTableBody.innerHTML = ''; // Limpiar la tabla
+            filteredData.forEach(producto => {
+              const row = document.createElement('tr');
+              row.innerHTML = `
+                <td>${producto.CodProducto}</td>
+                <td>${producto.NombreProducto}</td>
+                <td>${producto.DescripcionProducto}</td>
+                <td>${producto.CategoriaProducto}</td>
+                <td>${producto.PrecioUnidad}</td>
+                <td>${producto.CantidadStock}</td>
+                <td>${producto.IDProveedor}</td>
+              `;
+              productosTableBody.appendChild(row);
+            });
+          });
+        } else {
+          const row = document.createElement('tr');
+          row.innerHTML = '<td colspan="7">No se pudieron obtener los productos</td>';
+          productosTableBody.appendChild(row);
+        }
+      })
+      .catch(error => console.error('Error al obtener productos:', error));
+
+    // Obtener datos de la API de proveedores
+    fetch('https://backend-ing.onrender.com/api/Proveedores')
+      .then(response => response.json())
+      .then(data => {
+        const proveedoresTableBody = document.getElementById('proveedores_body');
+        if (data && data.data && Array.isArray(data.data)) {
+          const originalData = data.data.slice(); // Guardar datos originales para búsqueda
+
+          data.data.forEach(proveedor => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+              <td>${proveedor.IDProveedor}</td>
+              <td>${proveedor.NombreProveedor}</td>
+              <td>${proveedor.DireccionProveedor}</td>
+              <td>${proveedor.NoTelefono}</td>
+              <td>${proveedor.Correo}</td>
+              <td>${proveedor.Web}</td>
+              <td>${proveedor.DescripcionProveedor}</td>
+            `;
+            proveedoresTableBody.appendChild(row);
+          });
+
+          // Búsqueda en tiempo real para proveedores
+          const searchProveedores = document.getElementById('searchProveedores');
+          searchProveedores.addEventListener('keyup', function() {
+            const searchText = this.value.toLowerCase();
+            const filteredData = originalData.filter(proveedor =>
+              Object.values(proveedor).some(value =>
+                String(value).toLowerCase().includes(searchText)
+              )
+            );
+
+            proveedoresTableBody.innerHTML = ''; // Limpiar la tabla
+            filteredData.forEach(proveedor => {
+              const row = document.createElement('tr');
+              row.innerHTML = `
+                <td>${proveedor.IDProveedor}</td>
+                <td>${proveedor.NombreProveedor}</td>
+                <td>${proveedor.DireccionProveedor}</td>
+                <td>${proveedor.NoTelefono}</td>
+                <td>${proveedor.Correo}</td>
+                <td>${proveedor.Web}</td>
+                <td>${proveedor.DescripcionProveedor}</td>
+              `;
+              proveedoresTableBody.appendChild(row);
+            });
+          });
+        } else {
+          const row = document.createElement('tr');
+          row.innerHTML = '<td colspan="7">No se pudieron obtener los proveedores</td>';
+          proveedoresTableBody.appendChild(row);
+        }
+      })
+      .catch(error => console.error('Error al obtener proveedores:', error));
+  </script>
   </body>
               
 

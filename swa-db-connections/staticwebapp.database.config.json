@@ -41,7 +41,7 @@
     },
     "routes": [
       {
-        "route": "/proveedores-api/*",
+        "route": "/api/proveedores",
         "methods": ["GET", "POST", "PUT", "DELETE"],
         "allowedRoles": ["anonymous"]
       }

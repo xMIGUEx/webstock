@@ -6,8 +6,8 @@ const proveedoresController = require('./controllers/proveedores.controller');
 dotenv.config();
 
 const {
-    API_PORT = 4280,
-    SERVER_TAG = 'API EXPRESS'
+    API_PORT = 9000,
+    SERVER_TAG = 'API SERVER LOCAL'
 } = process.env;
 
 const app = express();

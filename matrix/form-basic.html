@@ -289,50 +289,57 @@
               <div class="card-body">
                   <h4 class="card-title">Registro Proveedor</h4>
                   <div class="form-group row">
-                      <label for="companyName" class="col-sm-3 text-end control-label col-form-label">Nombre de la empresa o proveedor</label>
+                    <label for="IDProveedor" class="col-sm-3 text-end control-label col-form-label">Codigo Proveedor</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="IDProveedor" placeholder="Codigo proveedor" />
+                    </div>
+                </div>
+                  <div class="form-group row">
+                      <label for="NombreProveedor" class="col-sm-3 text-end control-label col-form-label">Nombre de la empresa o proveedor</label>
                       <div class="col-sm-9">
-                          <input type="text" class="form-control" id="companyName" placeholder="Nombre de la empresa o proveedor" />
+                          <input type="text" class="form-control" id="NombreProveedor" placeholder="Nombre de la empresa o proveedor" />
                       </div>
                   </div>
                   <div class="form-group row">
-                      <label for="address" class="col-sm-3 text-end control-label col-form-label">Dirección</label>
+                      <label for="DireccionProveedor" class="col-sm-3 text-end control-label col-form-label">Dirección</label>
                       <div class="col-sm-9">
-                          <input type="text" class="form-control" id="address" placeholder="Dirección" />
+                          <input type="text" class="form-control" id="DireccionProveedor" placeholder="Dirección" />
                       </div>
                   </div>
                   <div class="form-group row">
-                      <label for="phoneNumber" class="col-sm-3 text-end control-label col-form-label">Número de teléfono</label>
+                      <label for="NoTelefono" class="col-sm-3 text-end control-label col-form-label">Número de teléfono</label>
                       <div class="col-sm-9">
-                          <input type="text" class="form-control" id="phoneNumber" placeholder="Número de teléfono" />
+                          <input type="text" class="form-control" id="NoTelefono" placeholder="Número de teléfono" />
                       </div>
                   </div>
                   <div class="form-group row">
-                      <label for="email" class="col-sm-3 text-end control-label col-form-label">Correo electrónico</label>
+                      <label for="Correo" class="col-sm-3 text-end control-label col-form-label">Correo electrónico</label>
                       <div class="col-sm-9">
-                          <input type="email" class="form-control" id="email" placeholder="Correo electrónico" />
+                          <input type="email" class="form-control" id="Correo" placeholder="Correo electrónico" />
                       </div>
                   </div>
                   <div class="form-group row">
-                      <label for="website" class="col-sm-3 text-end control-label col-form-label">Sitio web (si dispone)</label>
+                      <label for="Web" class="col-sm-3 text-end control-label col-form-label">Sitio web (si dispone)</label>
                       <div class="col-sm-9">
-                          <input type="text" class="form-control" id="website" placeholder="Sitio web" />
+                          <input type="text" class="form-control" id="Web" placeholder="Sitio web" />
                       </div>
                   </div>
                   
                   <div class="form-group row">
-                      <label for="comments" class="col-sm-3 text-end control-label col-form-label">Comentarios o descripción</label>
+                      <label for="DescripcionProveedor" class="col-sm-3 text-end control-label col-form-label">Comentarios o descripción</label>
                       <div class="col-sm-9">
-                          <textarea class="form-control"></textarea>
+                        <input type="text" class="form-control" id="DescripcionProveedor" placeholder="comentarios" />
                       </div>
                   </div>
               </div>
               <div class="border-top">
                   <div class="card-body">
-                      <button type="button" class="btn btn-primary">Submit</button>
+                      <button type="button" class="submitProveedor">Submit</button>
                   </div>
               </div>
           </form>
       </div>
+
      
                       <!-- Sección de Registro Productos -->
 
@@ -341,67 +348,156 @@
                             <div class="card-body">
                                 <h5 class="card-title">Registro Productos</h5>
                                 <div class="form-group row">
-                                    <label for="productName" class="col-sm-3 text-end control-label col-form-label">Nombre del producto</label>
+                                  <label for="CodProducto" class="col-sm-3 text-end control-label col-form-label">Codigo producto</label>
+                                  <div class="col-sm-9">
+                                      <input type="text" class="form-control" id="CodProducto" placeholder="Codigo del producto" />
+                                  </div>
+                              </div>
+                                <div class="form-group row">
+                                    <label for="NombreProducto" class="col-sm-3 text-end control-label col-form-label">Nombre del producto</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="productName" placeholder="Nombre del producto" />
+                                        <input type="text" class="form-control" id="NombreProducto" placeholder="Nombre del producto" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="productCode" class="col-sm-3 text-end control-label col-form-label">Código de producto</label>
+                                    <label for="DescripcionProducto" class="col-sm-3 text-end control-label col-form-label">Descripción de producto</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="productCode" placeholder="Código de producto" />
+                                        <textarea class="form-control" id="DescripcionProducto"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="productDescription" class="col-sm-3 text-end control-label col-form-label">Descripción de producto</label>
+                                    <label for="CategoriaProducto" class="col-sm-3 text-end control-label col-form-label">Categoría o tipo de producto</label>
                                     <div class="col-sm-9">
-                                        <textarea class="form-control" id="productDescription"></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="productCategory" class="col-sm-3 text-end control-label col-form-label">Categoría o tipo de producto</label>
-                                    <div class="col-sm-9">
-                                        <select class="form-select" id="productCategory">
+                                        <select class="form-select" id="CategoriaProducto">
                                             <option value="electronicos">Electrónicos</option>
                                             <option value="ropa">Ropa</option>
                                             <option value="hogar">Hogar</option>
                                             <option value="alimentos">Alimentos</option>
-                                            <!-- Agrega más opciones según tus necesidades -->
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="unitPrice" class="col-sm-3 text-end control-label col-form-label">Precio Unitario</label>
+                                    <label for="PrecioUnidad" class="col-sm-3 text-end control-label col-form-label">Precio Unitario</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="unitPrice" placeholder="Precio Unitario" />
+                                        <input type="text" class="form-control" id="PrecioUnidad" placeholder="Precio Unitario" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="stockQuantity" class="col-sm-3 text-end control-label col-form-label">Cantidad de Stock</label>
+                                    <label for="CantidadStock" class="col-sm-3 text-end control-label col-form-label">Cantidad de Stock</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="stockQuantity" placeholder="Cantidad de Stock" />
+                                        <input type="text" class="form-control" id="CantidadStock" placeholder="Cantidad de Stock" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="inventoryDate" class="col-sm-3 text-end control-label col-form-label">Fecha de ingreso de inventario</label>
+                                    <label for="FechaIngreso" class="col-sm-3 text-end control-label col-form-label">Fecha de ingreso de inventario</label>
                                     <div class="col-sm-9">
-                                        <input type="date" class="form-control" id="inventoryDate" />
+                                        <input type="date" class="form-control" id="FechaIngreso" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                  <label for="stockQuantity" class="col-sm-3 text-end control-label col-form-label">Id Proveedor</label>
+                                  <label for="IDProveedor" class="col-sm-3 text-end control-label col-form-label">Id Proveedor</label>
                                   <div class="col-sm-9">
-                                      <input type="text" class="form-control" id="stockQuantity" placeholder="ID Proveedor" />
+                                      <input type="text" class="form-control" id="IDProveedor" placeholder="ID Proveedor" />
                                   </div>
                             </div>
                             <div class="border-top">
                                 <div class="card-body">
-                                    <button type="button" class="btn btn-primary">Submit</button>
+                                    <button type="button" class="submitProducto">Submit</button>
                                 </div>
                             </div>
                         </form>
                     </div>
-
+                    <script>
+                      document.addEventListener('DOMContentLoaded', () => {
+                        const submitProveedor = document.querySelector('.submitProveedor');
+                        submitProveedor.addEventListener('click', () => {
+                          const IDProveedor = document.querySelector('#IDProveedor').value;
+                          const NombreProveedor = document.querySelector('#NombreProveedor').value;
+                          const DireccionProveedor = document.querySelector('#DireccionProveedor').value;
+                          const NoTelefono = document.querySelector('#NoTelefono').value;
+                          const Correo = document.querySelector('#Correo').value;
+                          const Web = document.querySelector('#Web').value;
+                          const DescripcionProveedor = document.querySelector('#DescripcionProveedor').value;
+                      
+                          const data = {
+                            IDProveedor: IDProveedor,
+                            NombreProveedor: NombreProveedor,
+                            DireccionProveedor: DireccionProveedor,
+                            NoTelefono: NoTelefono,
+                            Correo: Correo,
+                            Web: Web,
+                            DescripcionProveedor: DescripcionProveedor,
+                            // Agrega el resto de campos del formulario de proveedores aquí...
+                          };
+                      
+                          fetch('https://backend-ing.onrender.com/api/Proveedores', {
+                            method: 'POST',
+                            headers: {
+                              'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(data),
+                          })
+                            .then(response => {
+                              if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                              }
+                              return response.json();
+                            })
+                            .then(result => {
+                              console.log('Proveedor agregado:', result);
+                              // Puedes realizar acciones adicionales aquí, como actualizar la tabla de proveedores
+                            })
+                            .catch(error => {
+                              console.error('Error al agregar proveedor:', error);
+                            });
+                        });
+                      
+                        const submitProducto = document.querySelector('.submitProducto');
+                        submitProducto.addEventListener('click', () => {
+                          const CodProducto = document.querySelector('#CodProducto').value;
+                          const NombreProducto = document.querySelector('#NombreProducto').value;
+                          const DescripcionProducto = document.querySelector('#DescripcionProducto').value;
+                          const CategoriaProducto = document.querySelector('#CategoriaProducto').value;
+                          const PrecioUnidad = document.querySelector('#PrecioUnidad').value;
+                          const CantidadStock = document.querySelector('#CantidadStock').value;
+                          const FechaIngreso = document.querySelector('#FechaIngreso').value;
+                          const IDProveedor = document.querySelector('#IDProveedor').value;
+                      
+                          const data = {
+                            CodProducto: CodProducto,
+                            NombreProducto: NombreProducto,
+                            DescripcionProducto: DescripcionProducto,
+                            CategoriaProducto: CategoriaProducto,
+                            PrecioUnidad: PrecioUnidad,
+                            CantidadStock: CantidadStock,
+                            FechaIngreso: FechaIngreso,
+                            IDProveedor: IDProveedor,
+                            // Agrega el resto de campos del formulario de productos aquí...
+                          };
+                      
+                          fetch('https://backend-ing.onrender.com/api/Productos', {
+                            method: 'POST',
+                            headers: {
+                              'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(data),
+                          })
+                            .then(response => {
+                              if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                              }
+                              return response.json();
+                            })
+                            .then(result => {
+                              console.log('Producto agregado:', result);
+                              // Puedes realizar acciones adicionales aquí, como actualizar la tabla de productos
+                            })
+                            .catch(error => {
+                              console.error('Error al agregar producto:', error);
+                            });
+                        });
+                      });
+                      </script>
               
 
           <!-- ============================================================== -->
@@ -461,47 +557,7 @@
     <script src="./assets/libs/jquery-asColorPicker/dist/jquery-asColorPicker.min.js"></script>
     <script src="./assets/libs/jquery-minicolors/jquery.minicolors.min.js"></script>
     <script src="./assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-    <script src="./assets/libs/quill/dist/quill.min.js"></script>
-    <script>
-      //***********************************//
-      // For select 2
-      //***********************************//
-      $(".select2").select2();
 
-      /*colorpicker*/
-      $(".demo").each(function () {
-        //
-        // Dear reader, it's actually very easy to initialize MiniColors. For example:
-        //
-        //  $(selector).minicolors();
-        //
-        // The way I've done it below is just for the demo, so don't get confused
-        // by it. Also, data- attributes aren't supported at this time...they're
-        // only used for this demo.
-        //
-        $(this).minicolors({
-          control: $(this).attr("data-control") || "hue",
-          position: $(this).attr("data-position") || "bottom left",
 
-          change: function (value, opacity) {
-            if (!value) return;
-            if (opacity) value += ", " + opacity;
-            if (typeof console === "object") {
-              console.log(value);
-            }
-          },
-          theme: "bootstrap",
-        });
-      });
-      /*datwpicker*/
-      jQuery(".mydatepicker").datepicker();
-      jQuery("#datepicker-autoclose").datepicker({
-        autoclose: true,
-        todayHighlight: true,
-      });
-      var quill = new Quill("#editor", {
-        theme: "snow",
-      });
-    </script>
   </body>
 </html>
